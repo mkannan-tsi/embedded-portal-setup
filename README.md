@@ -1,10 +1,10 @@
 # embedded-portal-setup
 Repository to set up a sample embedded portal to replicate Embedded Analytics with Tableau. This portal setup allows you to test out the vital functionalities that most users are exploring when determining if Tableau is a good embedded analytics solution for them.
 
-Pre-requisites -
+---Pre-requisites---
 1. Clean  Windows instance
 2. Minimum tech specs mentioned to be adhered to - https://www.tableau.com/en-sg/products/techspecs#server
-
+<br/>
 
 ---Tableau Server setup---
 1. Install Tableau Server (https://www.tableau.com/products/server). During the installation, change the Run As User account to a Windows administrator, who would have access to CSV files - https://help.tableau.com/current/server/en-us/config_general.htm
