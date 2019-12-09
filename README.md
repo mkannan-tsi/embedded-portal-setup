@@ -38,4 +38,4 @@ Repository to set up a sample embedded portal to replicate Embedded Analytics wi
 4. Open a terminal window, and navigate to the FlaskApp folder. Run 'python FlaskApp.py'.
 <br/>
 
-On the machine, access http://webapp-server:5000/
+On any machine that has access, access http://webapp-server:5000/ on a web browser and proceed to Login
