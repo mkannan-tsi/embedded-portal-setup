@@ -26,8 +26,7 @@ Repository to set up a sample embedded portal to replicate Embedded Analytics wi
 9. In both cases, ensure that ther project permissions are locked to the project.
 10. Install Tableau Desktop (https://www.tableau.com/products/desktop) and open the workbook in the viz folder. Ensure that the data-source titled 'Sample - Superstore with Data Source Filter' is pointing at the folder titled 'data' within the source files, and not to a temporary folder.
 11. Publish the workbook to Tableau Server on the 'Default' project on the 'Template' site, and ensure that you keep 'Include External Assets' unticked.
-
-
+<br/>
 
 ---Web application server setup---
 1. Install Python (https://www.python.org/downloads/release/python-374/). Remember to add Python to PATH during installation.
@@ -37,7 +36,6 @@ Repository to set up a sample embedded portal to replicate Embedded Analytics wi
     3. cryptography
 3. Navigate to the script titled 'RestCalls.py' script and modify the environment variables at the top (if all other steps have been followed exactly until now, then only the IP address of the instance needs to be modified).
 4. Open a terminal window, and navigate to the FlaskApp folder. Run 'python FlaskApp.py'.
-
-
+<br/>
 
 On the machine, access http://webapp-server:5000/
