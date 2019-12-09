@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>MyPlanet by Planet Financial Group</title>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+
+    <link href="../static/layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
+    <link href="../static/layout/styles/admin-lte.css" rel="stylesheet" type="text/css" media="all">
+    <link href="../static/layout/styles/bootstrap.css" rel="stylesheet" type="text/css" media="all">
+    <link href="../static/layout/styles/_all-skins.css" rel="stylesheet" type="text/css" media="all">
+    <link href="../static/layout/styles/mobile.css" rel="stylesheet" type="text/css" media="all">
+    <link href="../static/layout/styles/fonts/font-awesome.css" rel="stylesheet"/>
+
+    <script type="text/javascript">
+        var viz;
+        var activeSheet, selectedMarks, options, placeholderDiv;
+        var tableauServer = '{{ server }}';
+        var ticket = '{{ ticket }}';
+        var tableauPath = '{{ workbook }}' + "/" + '{{ worksheet }}';
+        var url = '';
+        var tableauSite = '{{ site }}';
+        function initializeViz() {
+            url = tableauServer + '/trusted/' + ticket + "/t/" + tableauSite + "/views/" + tableauPath + "?:refresh=y"
+            placeholderDiv = document.getElementById("tableauViz");
+            options = {
+                width: placeholderDiv.offsetWidth,
+                height: placeholderDiv.offsetHeight,
+                hideTabs: true,
+                hideToolbar: true,
+                onFirstInteractive: function() 
+                {
+                    completeLoad();
+                }
+            };
+            viz = new tableau.Viz(placeholderDiv, url, options);
+        }
+    </script>
+</head>
+
+<body class="hold-transition skin-blue layout-boxed">
+    <div class="wrapper">
+        <header class="main-header">
+            <a href="/" class="logo">
+                <span class="logo-mini"><b>P</b>lanet Financial Group</span>
+                <span class="logo-lg"><b>My</b>Planet</span>
+            </a>
+            <nav class="navbar navbar-static-top" role="navigation">
+                <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+                    <span class="sr-only">Toggle navigation</span>
+                </a>
+                <div class="navbar-custom-menu">
+                    <ul class="nav navbar-nav">
+                        <li class="dropdown user user-menu">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <img src="../static/images/user.svg" class="user-image" alt="User Image">
+                                <span class="hidden-xs">{{user}}</span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li class="user-header">
+                                    <img src="../static/images/user.svg" class="img-circle" alt="User Image">
+                                    <p>
+                                        <small>{{user}}</small>
+                                    </p>
+                                </li>
+                       
+                                <li class="user-footer">
+                                    <div class="pull-left">
+                                        <a class="btn btn-default btn-flat" href="#" title="Manage">Profile</a>
+                                    </div>
+                                    <div class="pull-right">
+                                        <a href="/logout" class="btn btn-default btn-flat">Sign out</a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <aside class="main-sidebar">
+            <section class="sidebar">
+                <div class="user-panel">
+                    <div class="pull-left image">
+                        <img src="../static/images/user.svg" class="img-circle" alt="User Image">
+                    </div>
+                    <div class="pull-left info">
+                        <p>{{user}}</p>
+                        <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+                    </div>
+                </div>
+                
+                <ul class="sidebar-menu">
+                    <li class="header">MAIN NAVIGATION</li>
+                    <li id="left-sidebar-menu-dashboard">
+                        <a href="/grid">
+                            <i class="fa fa-dashboard"></i> <span>My Analytics Menu</span>
+                        </a>
+                    </li>  
+                </ul>
+            </section>
+        </aside>
+        
+        <div class="content-wrapper">
+            <section id="ContentTitle" class="content-header">
+                <h1>
+                    <small></small>
+                </h1>
+            </section>
+            <section style="display:none" id="VizToolbar" class="content-header">
+                <div style="min-height:40px">
+                    <div id="vizButtons"></div>
+                </div>
+            </section>
+            <section class="content">
+                <div id='eventBox' class="box box-warning" style='width: 1000px; min-height:40px; display:none'>
+                    <div id='eventContainer' class="box-body">
+                        <div id='eventPanel' style="float: left"></div>
+                        <div id='eventButtons' style="float: right">
+                            <button type="button" onclick="submitMarks()" class="btn-xs" style="margin-right: 2px;">Submit</button>
+                            <button type="button" onclick="resetAllMarks()" class="btn-xs" style="margin-right: 2px;">Cancel</button>
+                        </div>
+                    </div>
+                </div>
+                <div id='tableauViz' class="mobileDiv"></div>
+                <div id='editViz' class="mobileEditDiv"></div>
+            </section>
+        </div>
+       <footer style="height:1px; padding: 0px;" class="main-footer">         </footer>     
+    </div>
+
+    <script src="../static/js/jquery-3.2.1.min.js"></script>  
+    <script src="../static/js/bootstrap.js"></script>
+    <script src="../static/js/jquery.slimscroll.js"></script>
+    <script src="../static/js/fastclick.js"></script>
+    <script src="../static/js/_Layout.js"></script>
+    <script src="../static/js/app.js"></script>   
+    <script src="../static/js/jquery-ui.js"></script>
+    <script src="https://public.tableau.com/javascripts/api/tableau-2.0.0.min.js"></script>
+    <script src="../static/js/TableauViz.js"></script>
+    <script src="../static/js/TableauViz-menu.js"></script>
+
+</body>
+</html>

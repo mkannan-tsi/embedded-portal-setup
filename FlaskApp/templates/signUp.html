@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>MyPlanet by Planet Financial Group</title>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+
+    <link href="../static/layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
+    <link href="../static/layout/styles/admin-lte.css" rel="stylesheet" type="text/css" media="all">
+    <link href="../static/layout/styles/bootstrap.css" rel="stylesheet" type="text/css" media="all">
+
+    <script src="../static/js/jquery-3.2.1.min.js"></script>
+    <script src="../static/js/bootstrap.js"></script>
+    <script src="../static/js/icheck.js"></script>
+    <script src="../static/js/jquery.validate.js"></script>
+    <script src="../static/js/Login.js"></script>
+</head>
+
+<body class="hold-transition login-page">
+    <div class="login-box">
+        <div class="login-logo">
+            <p style="font-size:10pt; color:red"> {{ message }} </p>
+            <a href="/">Welcome to <b>MyPlanet</b></a>
+            <p style="font-size:10pt; color:#fff"> by Planet Financial Group  </p>
+        </div>
+        <div class="login-box-body">
+            <p class="login-box-msg">Sign in to start your session</p>
+            <form action="{{ url_for('signUpAction') }}" method="post" role="form">
+                <div class="form-group has-feedback">
+                    <input class="form-control" data-val="true" data-val-email="The Email field is not a valid e-mail address." data-val-required="The Email field is required." id="inputEmail" name="inputEmail" placeholder="Email" type="email" value="" />
+                    <span class="field-validation-valid text-danger" data-valmsg-for="Email" data-valmsg-replace="true"></span>
+                    <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+                </div>
+                <div class="form-group has-feedback">
+                    <select required class="form-control"  id="inputPersona" name="inputPersona" placeholder="Persona" value="">
+	                    <option selected disabled value=""> Persona: </option>
+	                    <option value="Country"> Country Manager </option>
+	                    <option value="Region"> Region Manager </option>
+                	</select>
+                </div>
+                <div class="form-group has-feedback">
+                    <input class="form-control" data-val="true" data-val-required="The Password field is required." id="inputPassword" name="inputPassword" placeholder="Password" type="password" />
+                    <span class="field-validation-valid text-danger" data-valmsg-for="Password" data-valmsg-replace="true"></span>
+                    <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <button type="submit" class="btn btn-primary btn-block btn-flat">Sign Up!</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <br>
+        <br>
+    </div>
+</body>
+</html>

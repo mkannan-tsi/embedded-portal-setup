@@ -1,0 +1,21 @@
+.mobileDiv {
+	width: 1025px;
+	height: 920px;
+}
+@media only screen and (max-width: 800px) {
+  .mobileDiv {
+      width: 95vw;
+      height: 80vh;
+    }
+}
+.mobileEditDiv {
+	width: 1225px;
+	height: 1000px; 
+	display:none;
+}
+@media only screen and (max-width: 800px) {
+  .mobileEditDiv {
+      width: 95vw;
+      height: 80vh;
+    }
+}

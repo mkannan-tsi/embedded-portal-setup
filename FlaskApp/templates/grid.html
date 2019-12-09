@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>MyPlanet by Planet Financial Group</title>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+
+    <link href="../static/layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
+    <link href="../static/layout/styles/admin-lte.css" rel="stylesheet" type="text/css" media="all">
+    <link href="../static/layout/styles/bootstrap.css" rel="stylesheet" type="text/css" media="all">
+    <link href="../static/layout/styles/_all-skins.css" rel="stylesheet" type="text/css" media="all">
+    <link href="../static/layout/styles/thumbnailImages.css" rel="stylesheet"/>
+    <link href="../static/layout/styles/fonts/font-awesome.css" rel="stylesheet"/>
+
+    <script src="../static/js/jquery-3.2.1.min.js"></script>
+    <script src="../static/js/MyVizzes-menu.js"></script>
+    <script src="../static/js/bootstrap.js"></script>
+    <script src="../static/js/jquery.slimscroll.js"></script>
+    <script src="../static/js/fastclick.js"></script>
+    <script src="../static/js/_Layout.js"></script>
+    <script src="../static/js/app.js"></script>
+    <script src="../static/js/jquery-ui.js"></script>
+    <script>
+        $.widget.bridge('uibutton', $.ui.button);
+    </script>
+
+</head>
+
+<body class="hold-transition skin-blue layout-boxed">
+    <div class="wrapper">
+        <header class="main-header">
+            <a href="/" class="logo">
+                <span class="logo-mini"><b>P</b>lanet Financial Group</span>
+                <span class="logo-lg"><b>My</b>Planet</span>
+            </a>
+            <nav class="navbar navbar-static-top" role="navigation">
+                <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+                    <span class="sr-only">Toggle navigation</span>
+                </a>
+                <div class="navbar-custom-menu">
+                    <ul class="nav navbar-nav">
+                        <li class="dropdown user user-menu">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <img src="../static/images/user.svg" class="user-image" alt="User Image">
+                                <span class="hidden-xs">{{user}}</span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li class="user-header">
+                                    <img src="../static/images/user.svg" class="img-circle" alt="User Image">
+                                    <p>
+                                        <small>{{user}}</small>
+                                    </p>
+                                </li>
+                       
+                                <li class="user-footer">
+                                    <div class="pull-left">
+                                        <a class="btn btn-default btn-flat" href="#" title="Manage">Profile</a>
+                                    </div>
+                                    <div class="pull-right">
+                                        <a href="/logout" class="btn btn-default btn-flat">Sign out</a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <aside class="main-sidebar">
+            <section class="sidebar">
+                <div class="user-panel">
+                    <div class="pull-left image">
+                        <img src="../static/images/user.svg" class="img-circle" alt="User Image">
+                    </div>
+                    <div class="pull-left info">
+                        <p>{{user}}</p>
+                        <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+                    </div>
+                </div>
+                
+                <ul class="sidebar-menu">
+                    <li class="header">MAIN NAVIGATION</li>
+                    <li id="left-sidebar-menu-dashboard">
+                        <a href="/grid">
+                            <i class="fa fa-dashboard"></i> <span>My Analytics Menu</span>
+                        </a>
+                    </li>  
+                </ul>
+            </section>
+        </aside>
+        
+        <div class="content-wrapper">
+            <section id="ContentTitle" class="content-header">
+                <h1>
+                     My Analytics Menu
+                    <small></small>
+                </h1>
+            </section>
+            <section style="display:none" id="VizToolbar" class="content-header">
+                <div style="min-height:40px">
+                    <div id="vizButtons"></div>
+                </div>
+            </section>
+            <section class="content">
+                <div>
+                    <table>
+                        <thead>
+                            <tr></tr>
+                        </thead>
+                        <tbody>
+                            {% for n in view %}
+                                {% if (loop.index0 % 3 == 0) %} 
+                                    <text> <tr> </text> 
+                                {% endif %}        
+                                <td style="padding-left:22px; padding-right:22px;">
+                                    <div class="portfolio-item">
+                                        <div class="portfolio-image">
+                                             <a href = "{{url}}/view={{n}}"> <img src="../static/images/previews/{{user}}/{{workbook[loop.index0]}}_{{n}}.png?t={{timestamp}}"> </a>
+                                        </div>
+                                        <div class="portfolio-info-fade">
+                                            <ul>
+                                                <li class="portfolio-project-name">{{n}} ({{workbook[loop.index0]}})</li>
+                                                <li class="read-more">
+                                                    <a href="{{url}}/workbook={{workbook[loop.index0]}}+view={{n}}" class="btn">Open</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </td>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </div>
+        <footer style="height:1px; padding: 0px;" class="main-footer">         </footer>
+    </div>
+</body>
+</html>
