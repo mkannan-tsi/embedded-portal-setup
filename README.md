@@ -41,3 +41,9 @@ Repository to set up a sample embedded portal to replicate Embedded Analytics wi
 <br/>
 
 On any machine that has access, access http://webapp-server:5000/ on a web browser and proceed to Login
+<br/>
+
+---Actions---
+1. Login as either Jamie (country manager) or Adrian (regional manager) and seamlessly view dashboards as either user. The first dashboard titled 'Overview' is role-based, and will showcase different datapoints for the two users.
+2. Edit the dashboard and proceed to save a new copy in the 'Sandbox' project, which has been permissioned in such a way that only they can view the newly-saved workbook and no one else.
+3. Create a new user in the persona of either Jamie and Adrian and log in as them to leverage on the same security protocols.
