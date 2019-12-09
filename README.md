@@ -19,10 +19,12 @@ Repository to set up a sample embedded portal to replicate Embedded Analytics wi
     - jamie
 7. Create a new project titled 'Sandbox'.
 8. Apply permissions on the project as per below -
-    - Default project -    - Project - Viewer
-                           - Workbooks - Interactor + Save/ Save As
-    - Sandbox project -    - Project - Publisher
-                           - Workbooks/ Data-sources - None
+    - Default project - <br/>
+        - Project - Viewer <br/>
+        - Workbooks - Interactor + Save/ Save As
+    - Sandbox project -<br/>
+        - Project - Publisher <br/>
+        - Workbooks/ Data-sources - None
 9. In both cases, ensure that ther project permissions are locked to the project.
 10. Install Tableau Desktop (https://www.tableau.com/products/desktop) and open the workbook in the viz folder. Ensure that the data-source titled 'Sample - Superstore with Data Source Filter' is pointing at the folder titled 'data' within the source files, and not to a temporary folder.
 11. Publish the workbook to Tableau Server on the 'Default' project on the 'Template' site, and ensure that you keep 'Include External Assets' unticked.
